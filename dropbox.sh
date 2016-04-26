@@ -9,15 +9,10 @@ install_dropbox(){
   echo "downloading..."
   curl -L "${dropboxurl}" > "dropbox-${uuid_suffix}.dmg"
   echo "mounting dmg..."
-  open "dropbox-${uuid_suffix}.dmg"
-  echo "looking for installer"
-  if [ -e /Volumes/Dropbox\ Installer/Dropbox.app ] ; then
-    echo "file found"
-    echo "installing..."
-    open /Volumes/Dropbox\ Installer/Dropbox.app
-  else
-    echo "file not found"
-  fi
+  # the -W flag causes open to wait for the app to finish opening
+  open -W "dropbox-${uuid_suffix}.dmg"
+  echo "installing..."
+  open -W /Volumes/Dropbox\ Installer/Dropbox.app
   echo "cleaning up..."
   umount /Volumes/Dropbox\ Installer
   rm "dropbox-${uuid_suffix}.dmg"
