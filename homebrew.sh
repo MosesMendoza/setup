@@ -5,7 +5,7 @@ install_homebrew(){
 }
 
 install_brews(){
-  brews="ack bash-completion git htop-osx iterm2 ruby tree vim wget"
+  brews="ack bash-completion git htop-osx ruby tree vim wget"
 
   for brew in $brews; do
     if ! brew list $brew >/dev/null 2>&1; then
