@@ -31,5 +31,15 @@ $GitPromptSettings.EnableFileStatus = $false
 $GitPromptSettings.BeforeText = "("
 $GitPromptSettings.AfterText = ")"
 
+
+# Set up bash readline-like behaviors
+Import-Module PSReadline
+
+Set-PSReadlineKeyHandler -Chord Ctrl+a -Function BeginningOfLine
+Set-PSReadlineKeyHandler -Chord Ctrl+e -Function EndOfLine
+Set-PSReadlineKeyHandler -Chord Ctrl+k -Function KillLine
+Set-PSReadlineKeyHandler -Chord Ctrl+f -Function NextWord
+Set-PSReadlineKeyHandler -Chord Ctrl+b -Function BackwardWord
+
 # Clear up the console
 Clear-Host
