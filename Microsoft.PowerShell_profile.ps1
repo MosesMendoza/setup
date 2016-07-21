@@ -1,6 +1,15 @@
 # Aliases
 new-item alias:vi -value vim
+
 function be { bundle exec $args }
+
+# git shortcuts
+function cm { git commit -m $args }
+function ca { git commit --amend -CHEAD }
+function add { git add $args }
+function status { git status }
+function dh { git diff HEAD }
+function lg { git lg }
 
 # Set default ruby to 2.1.8 as this is LCD for Puppet
 uru 2.1.8-x64
